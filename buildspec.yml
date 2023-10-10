@@ -29,7 +29,7 @@ phases:
       - echo "Authenticate on DockerHub"
       - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PAT
       - echo "Authenticate on AWS ECR"
-      - aws ecr get-login-password --region region | docker login --username AWS --password-stdin 928593304691.dkr.ecr.eu-west-1.amazonaws.com
+      - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 928593304691.dkr.ecr.eu-west-1.amazonaws.com
   build:
     on-failure: ABORT
     commands:
