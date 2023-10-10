@@ -16,7 +16,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
         <docker.registry.name>928593304691.dkr.ecr.eu-west-1.amazonaws.com</docker.registry.name>
-        <docker.organization.name>cloudtrain/codebuild</docker.organization.name>
+        <docker.organization.name>cloudtrain</docker.organization.name>
         <docker.image.name>${docker.registry.name}/${docker.organization.name}/${project.artifactId}</docker.image.name>
         <docker.removeMode>all</docker.removeMode>
         <docker.cleanup>try</docker.cleanup>
