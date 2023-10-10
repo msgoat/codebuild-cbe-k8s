@@ -5,6 +5,8 @@ env:
     CLOUDTRAIN_CODEBUILD_GIT_TAG_USER: "CLOUDTRAIN_CODEBUILD_GIT_TAG_USER"
     CLOUDTRAIN_CODEBUILD_GIT_TAG_EMAIL: "CLOUDTRAIN_CODEBUILD_GIT_TAG_EMAIL"
   secrets-manager:
+    HARBOR_USER: "cloudtrain-codebuild-harbor:user"
+    HARBOR_PASSWORD: "cloudtrain-codebuild-harbor:token"
     DOCKERHUB_USER: "cloudtrain-codebuild-dockerhub:docker-user"
     DOCKERHUB_PAT: "cloudtrain-codebuild-dockerhub:docker-pat"
     GITHUB_TOKEN: "cloudtrain-codebuild-github:msgoat_pat"
@@ -26,6 +28,8 @@ phases:
       - aws s3 cp s3://s3-eu-west-1-cloudtrain-codebuild-shared/.mvn/settings.xml /root/.m2/settings.xml
       - echo "Authenticate on DockerHub"
       - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PAT
+      - echo "Authenticate on AWS ECR"
+      - aws ecr get-login-password --region region | docker login --username AWS --password-stdin 928593304691.dkr.ecr.eu-west-1.amazonaws.com
   build:
     on-failure: ABORT
     commands:
