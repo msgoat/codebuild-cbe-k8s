@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 AS tool
+FROM ubuntu:23.04 AS tool
 
 COPY *.crt /usr/local/share/ca-certificates/
 
@@ -37,7 +37,7 @@ RUN echo "Download and unpack AWS CLI binaries" && \
     unzip -q /tmp/awscliv2.zip -d /tmp && \
     /tmp/aws/install
 
-FROM ubuntu:20.04
+FROM ubuntu:23.04
 
 ARG ARG_MAVEN_VERSION=3.9.5
 ARG ARG_KUBECTL_VERSION=1.28.2
