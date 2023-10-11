@@ -8,7 +8,7 @@
     <description>Docker image providing a custom build environment for AWS CodeBuild with Java, Maven, Docker, kubectl and helm.</description>
     <properties>
         <!-- new Maven version management -->
-        <revision>0.8.0</revision>
+        <revision>0.9.0</revision>
         <sha1>.12345678</sha1>
         <changelist>.LOCAL</changelist>
         <!-- common properties -->

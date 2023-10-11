@@ -82,6 +82,7 @@ COPY --from=awscli /tmp/aws/dist /opt/aws-cli
 
 RUN echo "Update system packages" && \
     apt-get update && \
+    apt-get upgrade --yes && \
     echo "Set system timezone" && \
     apt-get install --yes tzdata && \
     echo "Install missing tools, Java 11 JDK, Java 17 JDK and Docker via Ubuntu repository" && \

@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Fixed
 
+## [0.9.0] 2023-10-11
+### Added
+- fixed critical CVEs by doing an Ubuntu upgrade on the final image build
+### Changed
+### Fixed
+
 ## [0.8.0] 2023-10-10
 ### Added
 - first release which actually works
